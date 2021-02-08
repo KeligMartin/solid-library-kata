@@ -43,10 +43,6 @@ public class User implements UserInterface {
         return books;
     }
 
-    public String getUsername(){
-        return this.username;
-    }
-
     public Role getRole() {
         return role;
     }
