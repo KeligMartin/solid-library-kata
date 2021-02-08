@@ -5,5 +5,5 @@ import models.Book;
 public interface UserInterface {
     boolean canBorrowBook();
     void login();
-    Book borrowBook(Book book);
+    void borrowBook(Book book);
 }

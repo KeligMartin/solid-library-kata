@@ -22,12 +22,10 @@ public class User implements UserInterface {
         return this.role == Role.MEMBER;
     }
 
-    public Book borrowBook(Book book){
-        if(canBorrowBook()){
+    public void borrowBook(Book book){
+        if(canBorrowBook()) {
             books[0] = book;
-            return book;
         }
-        return null;
     }
 
     public Book[] getBooks() {

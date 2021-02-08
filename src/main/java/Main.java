@@ -5,21 +5,24 @@ import models.Author;
 import models.Librarian;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         User user = new User("Kelig");
+        Author author = new Author("Emile Zola");
+        Book book = new Book("L'assomoir", author);
+        user.borrowBook(book);
         List<Book> books = new ArrayList<>();
         Library library = new Library(books);
         Librarian librarian = new Librarian("Rui");
         user.login();
-        Author author = new Author("Emile Zola");
-        Book book = new Book("L'assomoir", author);
         Book book2 = new Book("L'oeuvre", author);
         librarian.addBook(library, book);
         librarian.addBook(library, book);
         System.out.println(library.books);
-        user.borrowBook(book);
+        user.borrowBook(book2);
+        System.out.println(Arrays.toString(user.getBooks()));
     }
 }
