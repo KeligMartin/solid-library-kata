@@ -3,9 +3,9 @@ import models.User;
 import models.Book;
 import models.Author;
 import models.Librarian;
+import models.service.FileService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -20,9 +20,6 @@ public class Main {
         user.login();
         Book book2 = new Book("L'oeuvre", author);
         librarian.addBook(library, book);
-        librarian.addBook(library, book);
-        System.out.println(library.books);
         user.borrowBook(book2);
-        System.out.println(Arrays.toString(user.getBooks()));
     }
 }

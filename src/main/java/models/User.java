@@ -2,6 +2,7 @@ package models;
 
 import models.enums.Role;
 import models.interfaces.UserInterface;
+import java.util.Arrays;
 
 public class User implements UserInterface {
 
@@ -45,5 +46,14 @@ public class User implements UserInterface {
 
     public Role getRole() {
         return role;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", role=" + role +
+                ", books=" + Arrays.toString(books) +
+                '}';
     }
 }
