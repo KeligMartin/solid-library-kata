@@ -15,7 +15,9 @@ public class User implements UserInterface {
     }
 
     public void login(){
-        this.role = Role.MEMBER;
+        if(this.role == Role.GUEST){
+            this.role = Role.MEMBER;
+        }
     }
 
     public boolean canBorrowBook() {
@@ -23,8 +25,17 @@ public class User implements UserInterface {
     }
 
     public void borrowBook(Book book){
-        if(canBorrowBook()) {
-            books[0] = book;
+        if(canBorrowBook()){
+            insertBook(book);
+        }
+    }
+
+    public void insertBook(Book book){
+        for(int i = 0; i < books.length; i++){
+            if(books[i] == null){
+                books[i] = book;
+                break;
+            }
         }
     }
 
@@ -34,5 +45,9 @@ public class User implements UserInterface {
 
     public String getUsername(){
         return this.username;
+    }
+
+    public Role getRole() {
+        return role;
     }
 }
