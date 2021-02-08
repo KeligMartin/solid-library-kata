@@ -25,8 +25,9 @@ public class User implements UserInterface {
     public Book borrowBook(Book book){
         if(canBorrowBook()){
             books[0] = book;
+            return book;
         }
-        return book;
+        return null;
     }
 
     public Book[] getBooks() {
